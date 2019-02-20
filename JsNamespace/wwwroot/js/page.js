@@ -1,6 +1,6 @@
-﻿import { JsNamespace as ns } from "/js/app.js";
-//
-const page = (function () {
+﻿import { JsNamespace as ns } from "/js/ns.js";
+
+(function () {
 
     const exec = (area, controller, action) => {
         const areaName = (area === "") ? undefined : area.toLowerCase();
@@ -15,18 +15,12 @@ const page = (function () {
         }
     }
 
-    const init = () => {
-        const renderBody = document.querySelector("#renderBody");
-        const area = renderBody.dataset.area;
-        const controller = renderBody.dataset.controller;
-        const action = renderBody.dataset.action;
+    const renderBody = document.querySelector("#renderBody");
+    const area = renderBody.dataset.area;
+    const controller = renderBody.dataset.controller;
+    const action = renderBody.dataset.action;
 
-        exec("", "common");
-        exec(area !== "" ? area : "", "home");
-        exec(area, controller, action);
-    }
-
-    return { init: init }
+    exec("", "common");
+    exec(area !== "" ? area : "", "home");
+    exec(area, controller, action);
 })();
-
-page.init();

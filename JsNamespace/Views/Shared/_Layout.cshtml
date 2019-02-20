@@ -33,22 +33,28 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li><a asp-area="Admin" asp-controller="Home" asp-action="Index">Admin</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div id="renderBody" class="container-fluid body-content" data-area="@ViewContext.RouteData.Values["area"]" data-controller="@ViewContext.RouteData.Values["controller"]" data-action="@ViewContext.RouteData.Values["action"]">
+    <div id="renderBody" class="container-fluid body-content"
+         data-area="@ViewContext.RouteData.Values["area"]"
+         data-controller="@ViewContext.RouteData.Values["controller"]"
+         data-action="@ViewContext.RouteData.Values["action"]">
         @RenderBody()
     </div>
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/app.js" asp-append-version="true" type="module"></script>
+        <script src="~/js/ns.js" asp-append-version="true" type="module"></script>
+        <script src="~/js/views.js" asp-append-version="true" type="module"></script>
+        <script src="~/js/viewsarea_admin.js" asp-append-version="true" type="module"></script>
         <script src="~/js/page.js" asp-append-version="true" type="module"></script>
     </environment>
-    <environment exclude="Development">
+    @*<environment exclude="Development">
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
                 asp-fallback-test="window.jQuery"
                 crossorigin="anonymous"
@@ -59,9 +65,11 @@
                 crossorigin="anonymous"
                 integrity="">
         </script>
-        <script src="~/js/app.min.js" asp-append-version="true" type="module"></script>
+        <script src="~/js/ns.min.js" asp-append-version="true" type="module"></script>
+        <script src="~/js/views.min.js" asp-append-version="true" type="module"></script>
+        <script src="~/js/viewsarea_admin.min.js" asp-append-version="true" type="module"></script>
         <script src="~/js/page.min.js" asp-append-version="true" type="module"></script>
-    </environment>
+    </environment>*@
 
     @RenderSection("Scripts", required: false)
 </body>
