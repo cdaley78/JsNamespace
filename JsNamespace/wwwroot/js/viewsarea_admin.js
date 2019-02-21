@@ -1,5 +1,5 @@
 ﻿import { JsNamespace as ns } from "/js/ns.js";
-
+//
 const admin = ns.admin;
 
 admin.home.index = () => {
