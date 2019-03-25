@@ -16,5 +16,11 @@
     "inputFiles": [
       "wwwroot/js/viewsareaadmin.js"
     ]
+  },
+  {
+    "outputFileName": "wwwroot/js/ns.min.js",
+    "inputFiles": [
+      "wwwroot/js/ns.js"
+    ]
   }
 ]
